@@ -8,6 +8,7 @@
 
 #import "GLPageContentRootViewController.h"
 #import "GLPageContentViewController.h"
+#import "GLAPIConsumer.h"
 
 @interface GLPageContentRootViewController ()
 
@@ -28,9 +29,14 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    _subjects = @[@{@"nombre": @"Algebra I", @"lunes": @"1:00-2:00", @"martes": @"2:00-3:00", @"miercoles": @"4:00-5:00", @"jueves": @"6:00-7:00", @"viernes": @"8:00-9:00"},
-                  @{@"nombre": @"Algebra II", @"lunes": @"1:00-2:00", @"martes": @"2:00-3:00", @"miercoles": @"4:00-5:00", @"jueves": @"6:00-7:00", @"viernes": @"8:00-9:00"},
-                  @{@"nombre": @"Algebra III", @"lunes": @"1:00-2:00", @"martes": @"2:00-3:00", @"miercoles": @"4:00-5:00", @"jueves": @"6:00-7:00", @"viernes": @"8:00-9:00"}];
+    _subjects = @[@{@"nombre": @"Asignatura", @"lunes": @"", @"martes": @"", @"miercoles": @"", @"jueves": @"", @"viernes": @""}];
+    
+    GLAPIConsumer *consumer = [GLAPIConsumer sharedInstance];
+    
+    [consumer getAcademicLoad];
+    
+    NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
+    [notificationCenter addObserver:self selector:@selector(academicLoadSuccess:) name:@"AcademicLoadSuccess" object:nil];
     
     // Create page view controller
     self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
@@ -49,22 +55,53 @@
 
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
+- (void)academicLoadSuccess:(NSNotification *)notification {
+    NSDictionary *response = notification.object;
+    
+    NSMutableArray *subs = [[NSMutableArray alloc] init];
+    
+    NSArray *extras = response[@"Extraoridnarios"];
+    
+    for (NSDictionary *sub in extras) {
+        [subs addObject:@{@"nombre": sub[@"nombre"], @"lunes": @"N/A", @"martes": @"N/A", @"miercoles": @"N/A", @"jueves": @"N/A", @"viernes": @"N/A"}];
+    }
+    
+    NSArray *ordin = response[@"Ordinarios"];
+    for (NSDictionary *sub in ordin) {
+        [subs addObject:@{@"nombre": sub[@"nombre"], @"lunes": sub[@"lunes"], @"martes": sub[@"martes"], @"miercoles": sub[@"miercoles"], @"jueves": sub[@"jueves"], @"viernes": sub[@"viernes"]}];
+    }
+    
+//    NSLog(@"Sub: %@", subs);
+    self.subjects = subs;
+    
+    GLPageContentViewController *startingViewController = [self viewControllerAtIndex:0];
+    NSArray *viewControllers = @[startingViewController];
+    [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+    
+}
+
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    [prefs setObject:@"" forKey:@"hash"];
+    [prefs synchronize];
+    
 }
-*/
+
 
 - (GLPageContentViewController *)viewControllerAtIndex:(NSUInteger)index
 {

@@ -7,6 +7,7 @@
 //
 
 #import "GLLoginViewController.h"
+#import "GLAPIConsumer.h"
 
 @interface GLLoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *matriculaField;
@@ -31,12 +32,19 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self.navigationItem setTitle:@"Login"];
+    
+    NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
+    [notificationCenter addObserver:self selector:@selector(loginSuccess:) name:@"LoginSuccess" object:nil];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)loginSuccess:(NSNotification *)notification {
+    [self performSegueWithIdentifier:@"subjectsViewSegue" sender:self];
 }
 
 /*
@@ -51,6 +59,9 @@
 */
 
 - (IBAction)enterButtonTouched:(UIButton *)sender {
-    [self performSegueWithIdentifier:@"subjectsViewSegue" sender:sender];
+    
+    GLAPIConsumer *consumer = [GLAPIConsumer sharedInstance];
+    
+    [consumer authenticateWithMatricula:self.matriculaField.text andPassword:self.passwordField.text];
 }
 @end
