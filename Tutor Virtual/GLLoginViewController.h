@@ -1,5 +1,5 @@
 //
-//  GLMasterViewController.h
+//  GLLoginViewController.h
 //  Tutor Virtual
 //
 //  Created by Gilberto Leon Enriquez on 29/3/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GLMasterViewController : UITableViewController
+@interface GLLoginViewController : UIViewController
 
 @end

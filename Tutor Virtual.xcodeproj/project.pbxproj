@@ -14,14 +14,15 @@
 		7DB2A66618E75803006C5253 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DB2A66518E75803006C5253 /* main.m */; };
 		7DB2A66A18E75803006C5253 /* GLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DB2A66918E75803006C5253 /* GLAppDelegate.m */; };
 		7DB2A66D18E75803006C5253 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DB2A66B18E75803006C5253 /* Main.storyboard */; };
-		7DB2A67018E75803006C5253 /* GLMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DB2A66F18E75803006C5253 /* GLMasterViewController.m */; };
-		7DB2A67318E75803006C5253 /* GLDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DB2A67218E75803006C5253 /* GLDetailViewController.m */; };
 		7DB2A67518E75803006C5253 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DB2A67418E75803006C5253 /* Images.xcassets */; };
 		7DB2A67C18E75803006C5253 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DB2A67B18E75803006C5253 /* XCTest.framework */; };
 		7DB2A67D18E75803006C5253 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DB2A65918E75803006C5253 /* Foundation.framework */; };
 		7DB2A67E18E75803006C5253 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DB2A65D18E75803006C5253 /* UIKit.framework */; };
 		7DB2A68618E75803006C5253 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7DB2A68418E75803006C5253 /* InfoPlist.strings */; };
 		7DB2A68818E75803006C5253 /* Tutor_VirtualTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DB2A68718E75803006C5253 /* Tutor_VirtualTests.m */; };
+		7DB2A69318E76390006C5253 /* GLLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DB2A69218E76390006C5253 /* GLLoginViewController.m */; };
+		7DB2A69618E76488006C5253 /* GLPageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DB2A69518E76488006C5253 /* GLPageContentViewController.m */; };
+		7DB2A69918E76579006C5253 /* GLPageContentRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DB2A69818E76579006C5253 /* GLPageContentRootViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,16 +47,18 @@
 		7DB2A66818E75803006C5253 /* GLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLAppDelegate.h; sourceTree = "<group>"; };
 		7DB2A66918E75803006C5253 /* GLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GLAppDelegate.m; sourceTree = "<group>"; };
 		7DB2A66C18E75803006C5253 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		7DB2A66E18E75803006C5253 /* GLMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLMasterViewController.h; sourceTree = "<group>"; };
-		7DB2A66F18E75803006C5253 /* GLMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GLMasterViewController.m; sourceTree = "<group>"; };
-		7DB2A67118E75803006C5253 /* GLDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLDetailViewController.h; sourceTree = "<group>"; };
-		7DB2A67218E75803006C5253 /* GLDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GLDetailViewController.m; sourceTree = "<group>"; };
 		7DB2A67418E75803006C5253 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		7DB2A67A18E75803006C5253 /* Tutor VirtualTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tutor VirtualTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DB2A67B18E75803006C5253 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		7DB2A68318E75803006C5253 /* Tutor VirtualTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tutor VirtualTests-Info.plist"; sourceTree = "<group>"; };
 		7DB2A68518E75803006C5253 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7DB2A68718E75803006C5253 /* Tutor_VirtualTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tutor_VirtualTests.m; sourceTree = "<group>"; };
+		7DB2A69118E76390006C5253 /* GLLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLLoginViewController.h; sourceTree = "<group>"; };
+		7DB2A69218E76390006C5253 /* GLLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLLoginViewController.m; sourceTree = "<group>"; };
+		7DB2A69418E76487006C5253 /* GLPageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLPageContentViewController.h; sourceTree = "<group>"; };
+		7DB2A69518E76488006C5253 /* GLPageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLPageContentViewController.m; sourceTree = "<group>"; };
+		7DB2A69718E76579006C5253 /* GLPageContentRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLPageContentRootViewController.h; sourceTree = "<group>"; };
+		7DB2A69818E76579006C5253 /* GLPageContentRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLPageContentRootViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,10 +121,12 @@
 				7DB2A66818E75803006C5253 /* GLAppDelegate.h */,
 				7DB2A66918E75803006C5253 /* GLAppDelegate.m */,
 				7DB2A66B18E75803006C5253 /* Main.storyboard */,
-				7DB2A66E18E75803006C5253 /* GLMasterViewController.h */,
-				7DB2A66F18E75803006C5253 /* GLMasterViewController.m */,
-				7DB2A67118E75803006C5253 /* GLDetailViewController.h */,
-				7DB2A67218E75803006C5253 /* GLDetailViewController.m */,
+				7DB2A69118E76390006C5253 /* GLLoginViewController.h */,
+				7DB2A69218E76390006C5253 /* GLLoginViewController.m */,
+				7DB2A69418E76487006C5253 /* GLPageContentViewController.h */,
+				7DB2A69518E76488006C5253 /* GLPageContentViewController.m */,
+				7DB2A69718E76579006C5253 /* GLPageContentRootViewController.h */,
+				7DB2A69818E76579006C5253 /* GLPageContentRootViewController.m */,
 				7DB2A67418E75803006C5253 /* Images.xcassets */,
 				7DB2A66018E75803006C5253 /* Supporting Files */,
 			);
@@ -255,9 +260,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DB2A67318E75803006C5253 /* GLDetailViewController.m in Sources */,
+				7DB2A69318E76390006C5253 /* GLLoginViewController.m in Sources */,
+				7DB2A69918E76579006C5253 /* GLPageContentRootViewController.m in Sources */,
 				7DB2A66618E75803006C5253 /* main.m in Sources */,
-				7DB2A67018E75803006C5253 /* GLMasterViewController.m in Sources */,
+				7DB2A69618E76488006C5253 /* GLPageContentViewController.m in Sources */,
 				7DB2A66A18E75803006C5253 /* GLAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
